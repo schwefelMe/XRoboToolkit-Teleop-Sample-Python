@@ -1,0 +1,11 @@
+ README_G1D_2.md                                    |  36 +++-
+ cam_config_client.yaml                             |  16 +-
+ scripts/hardware/image_client_g1.py                |  48 ++++-
+ scripts/hardware/recorder_node.py                  |   5 +-
+ scripts/hardware/robot_control/robot_arm.py        |  81 +++++++-
+ .../hardware/robot_control/robot_hand_unitree.py   | 110 ++++++++++-
+ scripts/hardware/teleop_G1D_hardware.py            |  20 +-
+ scripts/hardware/teleop_G1D_hardware_omnihand.py   | 112 ++++++++---
+ scripts/hardware/teleop_recorder.py                | 207 +++++++++++++++------
+ scripts/hardware/teleop_recorder_1.py              |  18 +-
+ 10 files changed, 534 insertions(+), 119 deletions(-)

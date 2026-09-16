@@ -1,0 +1,88 @@
+retargeting:
+  # ===下面这个默认版本定义的是指尖和掌根之间的向量========================================================================
+
+  # type: vector
+  # urdf_path: omnihand/omnihand_left.urdf
+
+  # # Target refers to the retargeting target, which is the robot hand
+  # target_joint_names: [
+  #           'L_thumb_roll_joint',
+  #           'L_thumb_abad_joint',
+  #           'L_thumb_mcp_joint',
+  #           'L_index_abad_joint',
+  #           'L_index_pip_joint',
+  #           'L_middle_pip_joint',
+  #           'L_ring_abad_joint',
+  #           'L_ring_pip_joint',
+  #           'L_pinky_abad_joint',
+  #           'L_pinky_pip_joint',
+  #           ]
+  # target_origin_link_names: [ "L_palm", "L_palm", "L_palm", "L_palm", "L_palm"]
+  # target_task_link_names: [ "L_thumb_tip", "L_index_tip", "L_middle_tip", "L_ring_tip", "L_pinky_tip" ]
+  # scaling_factor: 1.2
+
+  # # Source refers to the retargeting input, which usually corresponds to the human hand
+  # # The joint indices of human hand joint which corresponds to each link in the target_link_names
+  # target_link_human_indices:  [ [ 0, 0, 0, 0, 0 ], [ 4, 8, 12, 16, 20 ] ] # 遵循 mediapipe hand format
+
+  # # A smaller alpha means stronger filtering, i.e. more smooth but also larger latency
+  # low_pass_alpha: 0.2
+  # ==============================================================================================================================
+
+
+
+  type: vector
+  urdf_path: omnihand/omnihand_left.urdf
+
+  # Target refers to the retargeting target, which is the robot hand
+  target_joint_names: [
+            'L_thumb_roll_joint',
+            'L_thumb_abad_joint',
+            'L_thumb_mcp_joint',
+            'L_index_abad_joint',
+            'L_index_pip_joint',
+            'L_middle_pip_joint',
+            'L_ring_abad_joint',
+            'L_ring_pip_joint',
+            'L_pinky_abad_joint',
+            'L_pinky_pip_joint',
+            ]
+  target_origin_link_names: [
+            "L_thumb_mcp", # 2
+            "L_index_abad", # 5
+            "L_middle_abad",  # 9
+            "L_ring_abad",  # 13
+            "L_pinky_abad",  # 17
+            "L_index_tip", # 8
+            "L_middle_tip",  # 12
+            "L_ring_tip",  # 16
+            "L_pinky_tip",  # 20
+            "L_index_pip",  # 6
+            "L_ring_pip",  # 14
+            "L_pinky_pip",  # 19
+            ]
+  target_task_link_names: [ 
+            "L_thumb_tip", # 4
+            "L_index_tip", # 8
+            "L_middle_tip",  # 12
+            "L_ring_tip",  # 16
+            "L_pinky_tip",  # 20
+            "L_thumb_tip", # 4
+            "L_thumb_tip",  # 4
+            "L_thumb_tip",  # 4
+            "L_thumb_tip",  # 4
+            "L_middle_pip",  # 10
+            "L_middle_pip",  # 10
+            "L_middle_pip",  # 10
+            ]
+  scaling_factor: 1.2
+
+  # Source refers to the retargeting input, which usually corresponds to the human hand
+  # The joint indices of human hand joint which corresponds to each link in the target_link_names
+  target_link_human_indices:  [
+              [2, 5,  9, 13, 17,   8, 12, 16, 20,     6, 14, 19,], 
+              [4, 8, 12, 16, 20,   4,  4,  4,  4,    10, 10, 10,]]
+              # 五指MCP到TIP     | 四指TIP到拇指TIP |  三指PIP到中指PIP
+
+  # A smaller alpha means stronger filtering, i.e. more smooth but also larger latency
+  low_pass_alpha: 0.2

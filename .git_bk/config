@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "upstream"]
+	url = https://github.com/XR-Robotics/XRoboToolkit-Teleop-Sample-Python.git
+	fetch = +refs/heads/*:refs/remotes/upstream/*
+[branch "main"]
+	vscode-merge-base = origin/main
+[remote "origin"]
+	url = http://10.48.61.100:9090/ysm/x2_teleop.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

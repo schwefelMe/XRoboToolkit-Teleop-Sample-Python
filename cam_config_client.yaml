@@ -1,0 +1,47 @@
+head_camera:
+  enable_zmq: true
+  zmq_port: 55555
+  enable_webrtc: true
+  webrtc_port: 60001
+  type: realsense
+  webrtc_codec: h264
+  image_shape:
+  - 360
+  - 640
+  binocular: false
+  fps: 30
+  rotation_degrees: 0
+  video_id: null
+  # serial_number: '243722073100'  #196
+  serial_number: '261722071825'  #201
+  physical_path: null
+left_wrist_camera:
+  enable_zmq: true
+  zmq_port: 55556
+  enable_webrtc: true
+  webrtc_port: 60002
+  webrtc_codec: h264
+  type: uvc
+  image_shape:
+  - 480
+  - 640
+  binocular: false
+  fps: 30
+  video_id: 2
+  serial_number: '0001'
+  physical_path: null
+right_wrist_camera:
+  enable_zmq: true
+  zmq_port: 55557
+  enable_webrtc: true
+  webrtc_port: 60003
+  webrtc_codec: h264
+  type: uvc
+  image_shape:
+  - 480
+  - 640
+  binocular: false
+  fps: 30
+  video_id: 4
+  serial_number: JR0002
+  physical_path: null
